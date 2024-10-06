@@ -9,4 +9,4 @@ Formally, for a number x, the Computational Entropy PD(x) is defined as the card
 PD(x) = |{ p : U(p) = x }|
 
 
-
+My intuition says that Kolmogorov Complexity is actully relavent here; because once the shortest piece of code is established, one can code in to ignore any other part of the programs. Once you have established the shortest piece of code that can compute a given number, you can essentially disregard all the trivial extensions or modifications that don't add meaningful information. In a strict sense, all those variants—whether they involve adding no-operations, redundant steps, or changing the structure without affecting the output—would still count as distinct different programs. This is because, from the perspective of a Turing machine, each of these programs has a unique sequence of states, instructions, or symbols, even if they ultimately produce the same output.

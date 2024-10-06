@@ -1,20 +1,51 @@
 ## Computational-entropy-of-numbers
 
-### Kolmogorov complexity answers: What is the shortest description?  
-### Computational entropy answers: How many descriptions exist?
+ Kolmogorov complexity answers: What is the shortest description?  
+ Computational entropy answers: How many descriptions exist? 
 
-Don't think I've seen this in the literature; if it exists, please send it my way!
+...Don't think I've seen this in the literature; if it exists, please send it my way!
 
 ---
 
-Something I'm terming **Computational Entropy of Numbers**; it classifies numbers based on the diversity of Turing complete programs (e.g., number of distinct Turing programs) that can compute them. If **Kolmogorov Complexity** reveals how concise a description can be, **Computational Entropy** tells us how versatile the computation of that value is.
+1. Formal Definition
 
-Formally, for a number **x**, the **Computational Entropy** **PD(x)** is defined as the cardinality of the set of all distinct Turing programs **p** such that a universal Turing machine **U** produces **x** as an output:
+1.1 Breakdown of the Definition
 
-$$
-PD(x) = |\{ p : U(p) = x \}|
-$$
+Definition:
+For a given number x, the Computational Entropy PD(x) is defined as:
+PD(x) = |{ p | U(p) = x }|
 
+where:
+* U is a universal Turing machine.
+* p represents distinct Turing machine programs.
+* U(p) = x denotes that program p outputs the number x.
+
+Components:
+1. Universal Turing Machine (U):
+   * Serves as the standard computational model.
+   * Ensures that PD(x) is machine-independent up to a constant factor, similar to Kolmogorov Complexity.
+
+2. Program p:
+   * A finite binary string representing a valid Turing machine program.
+   * Each distinct p potentially corresponds to a unique computational pathway to produce x.
+
+3. Output Condition U(p) = x:
+   * Ensures that only programs that correctly compute x are counted.
+   * Programs that do not halt or produce different outputs are excluded.
+
+1.2 Analysis of Each Component
+
+1. Universal Turing Machine (U):
+   * Choice of U affects PD(x) only up to a multiplicative constant, similar to invariance in Kolmogorov Complexity.
+   * Different universal machines can be used, but results remain equivalent in a theoretical sense.
+
+2. Program p:
+   * Programs can vary in length, structure, and computational approach.
+   * Includes all possible ways to compute x, ranging from minimal descriptions to highly redundant or inefficient algorithms.
+
+3. Output Condition U(p) = x:
+   * Ensures precise counting of computational pathways that result in x.
+   * Excludes programs that either do not produce x or do not halt.
 ---
 
 After thinking about this for a fair bit, going down the path of calculating all of the different ways you can possibly think through computing a number (e.g., infinite series, addition + subtraction, and the countably infinite ways you can add countably infinite numbers together, probabilistic programs like Buffon's needle for π), I actually think there is an easier way. My intuition says that **Kolmogorov Complexity** is actually relevant here; because once the shortest piece of code is established, one can code in to ignore any other part of the programs. Once you have established the shortest piece of code that can compute a given number, you can essentially disregard all the trivial extensions or modifications that don't add meaningful information. 

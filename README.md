@@ -1,5 +1,9 @@
 # Computational-entropy-of-numbers
 
+Kolmogorov complexity answers: What is the shortest description?
+Computational entropy answers: How many descriptions exist?
+
+
 Don't think I've seen this in the literature; if it exists, please sent send my way!
 
 Something i'm terming Computational Entropy of Numbers; it classifies numbers based on the diversity of Turing complete programs (eg: Number of distinct turing programs) that can compute them. If Kolmogorov Complexity reveals how concise a description can be, Computational Entropy tells us how versatile the computation of that value is.

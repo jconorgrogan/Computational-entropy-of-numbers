@@ -47,7 +47,7 @@ Components:
    * Ensures precise counting of computational pathways that result in x.
    * Excludes programs that either do not produce x or do not halt.
 
-A variation of this might ask: Given a random program size, which numbers are most likely to be produced by a program of that size?
+A variation of this might ask: Given a random program size, which numbers are most likely to be produced by a program of that size? Which numbers can be produced by the greatest number of distinct programs of size n?
 ---
 
 After thinking about this for a fair bit, going down the path of calculating all of the different ways you can possibly think through computing a number (e.g., infinite series, addition + subtraction, and the countably infinite ways you can add countably infinite numbers together, probabilistic programs like Buffon's needle for π), I actually think there is an easier way. My intuition says that **Kolmogorov Complexity** is actually relevant here; because once the shortest piece of code is established, one can code in to ignore any other part of the programs. Once you have established the shortest piece of code that can compute a given number, you can essentially disregard all the trivial extensions or modifications that don't add meaningful information. 

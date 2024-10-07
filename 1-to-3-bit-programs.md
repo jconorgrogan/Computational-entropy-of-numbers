@@ -132,23 +132,3 @@ Instruction: Output 1
 | 2      | 2                  | 010, 101  |
 | 3      | 1                  | 011      |
 
----
-
-# Combined Summary
-
-## Total Programs
-
-- **1-bit Programs:** 2 programs  
-- **2-bit Programs:** 4 programs  
-- **3-bit Programs:** 8 programs  
-- **Total Programs:** 14 programs  
-
-### Outputs Across All Program Lengths
-
-| Output | Total Number of Programs | Programs                          |
-|--------|--------------------------|-----------------------------------|
-| -1     | 2                        | 11 (2-bit), 110 (3-bit)          |
-| 0      | 5                        | 0 (1-bit), 00, 10 (2-bit), 000, 111 (3-bit) |
-| 1      | 5                        | 1 (1-bit), 01 (2-bit), 001, 100 (3-bit) |
-| 2      | 2                        | 010, 101 (3-bit)                 |
-| 3      | 1                        | 011 (3-bit)                      |

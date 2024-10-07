@@ -1,7 +1,7 @@
 ## Computational-entropy-of-numbers
 
  Kolmogorov complexity answers: What is the shortest description?  
- Computational entropy answers: How many descriptions exist? 
+ Computational entropy answers: How many possible descriptions exist? 
 
 ...Don't think I've seen this in the literature; if it exists, please send it my way!
 
@@ -60,6 +60,7 @@ The Intersection (Program and Data Overlap): It identifies how the programs, ins
 
 
 ---
+**Discussion:**
 
 After thinking about this for a fair bit, going down the path of calculating all of the different ways you can possibly think through computing a number (e.g., infinite series, addition + subtraction, and the countably infinite ways you can add countably infinite numbers together, probabilistic programs like Buffon's needle for π), I actually think there is an easier way. My intuition says that **Kolmogorov Complexity** is actually relevant here; because once the shortest piece of code is established, one can code in to ignore any other part of the programs. Once you have established the shortest piece of code that can compute a given number, you can essentially disregard all the trivial extensions or modifications that don't add meaningful information. 
 

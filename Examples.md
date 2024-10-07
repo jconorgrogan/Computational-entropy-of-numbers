@@ -157,3 +157,30 @@ Output 4: 4 programs
 Output 5: 2 programs
 Output 6: 3 programs
 Output 9: 1 program
+
+
+...
+
+The Impact of Instruction Set Design on Output Distribution
+Instruction Set Choices Influence Distribution:
+
+Operations that Always Output the Same Value:
+Opcodes designed to always output a specific value (e.g., always output 0) will inflate the program count for that output.
+Operations with High Variability:
+Operations like exponentiation can produce a wide range of outputs, some of which are rare, leading to outputs with low program counts.
+Operand Utilization:
+Ignoring operands or using only one operand in certain opcodes increases the number of programs mapping to specific outputs.
+4. Comparing the Two Configurations
+Total Programs per Output:
+Output	Original Configuration	Most Diverse Configuration
+0	21	27
+1	10	10
+2	12	5
+3	11	9
+4	4	1
+5	2	0
+6	3	4
+8	0	1
+9	1	5
+27	0	1
+

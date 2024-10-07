@@ -318,107 +318,50 @@ All possible instruction sets and outputs have been considered within the constr
 
 - **Total Unique Instruction Sets:** Multiple instruction sets have been explored to cover all feasible operations.
 
----
-
-## Final Conclusion
-
-- **Completeness:** The analyses for program lengths 1, 2, and 3 bits have been expanded to include all possible instruction sets and outputs within the given limitations.
-- **Exhaustive Coverage:** All feasible operations and their mappings to opcodes have been considered.
-- **Unique Outputs:** All unique outputs that can be produced by programs of these lengths have been identified.
-
-*Therefore, the analysis covers every single possible instruction set and mapping given the limitations of program length.*
-
----
-
 ## Summary Tables
+## 1. Summary for Each Bit Layer
 
-### Combined Outputs and Program Counts
-
-#### Program Length: 1 Bit
-
-| Output | Number of Programs | Instruction Sets (Examples)           |
-|--------|--------------------|---------------------------------------|
-| -1     | 1                  | Option 3 (`1` outputs `-1`)            |
-| 0      | 1                  | Option 1 (`0` outputs `0`)             |
-| 1      | 1                  | Option 1 (`1` outputs `1`)             |
-
-#### Program Length: 2 Bits
-
-| Output | Number of Programs | Instruction Sets (Examples)           |
-|--------|--------------------|---------------------------------------|
-| -1     | 1                  | Instruction Set 2 (`11` outputs `-1`)  |
-| 0      | 4                  | Multiple instruction sets             |
-| 1      | 4                  | Multiple instruction sets             |
-| 2      | 1                  | Instruction Set 3 (`01` outputs `2`)   |
-
-#### Program Length: 3 Bits
-
-| Output | Number of Programs | Instruction Sets (Examples)                   |
-|--------|--------------------|-----------------------------------------------|
-| -3     | 1                  | Instruction Set 2 (`011` outputs `-3`)        |
-| -2     | 1                  | Instruction Set 2 (`010` outputs `-2`)        |
-| -1     | 2                  | Instruction Set 2 (`001`, `100`)             |
-| 0      | 4                  | Multiple instruction sets (`000`, `101`, etc.) |
-| 1      | 5                  | Multiple instruction sets                     |
-| 2      | 4                  | Multiple instruction sets                     |
-| 3      | 2                  | Instruction Set 1 & 2 (`011`, `110`)          |
-| 4      | 3                  | Instruction Set 1 & 3 (`111`, `010`, `110`)   |
-| 6      | 1                  | Instruction Set 3 (`111` outputs `6`)         |
-| 9      | 1                  | Instruction Set 3 (`011` outputs `9`)         |
+| **Bit Length** | **Count of Unique Programs** | **Possible Unique Programs** | **Unique Instruction Sets** | **Unique Outputs** |
+|----------------|------------------------------|------------------------------|-----------------------------|--------------------|
+| 1 Bit          | 2                            | 2                            | 3                           | 3                  |
+| 2 Bits         | 4                            | 4                            | 3                           | 4                  |
+| 3 Bits         | 8                            | 8                            | 3                           | 10                 |
 
 ---
 
-## Observations
+## 2. Unique Programs, Instruction Sets, and Outputs
 
-### Output `0`
-
-- **Program Length 1 Bit:** `1` program
-- **Program Length 2 Bits:** `4` programs
-- **Program Length 3 Bits:** `4` programs
-- **Total:** `9` programs
-
-**Reason:** Due to operations like outputting `0`, negation resulting in `0`, and operations like decrement leading to `0`.
-
-### Outputs `1` to `3`
-
-- **Program Length 1 Bit:** `1` program
-- **Program Length 2 Bits:** `4` programs
-- **Program Length 3 Bits:** `5` programs
-- **Total:** `10` programs
-
-**Reason:** These outputs benefit from direct outputs and increment/decrement operations across different instruction sets.
-
-### Outputs `-1` to `-3`
-
-- **Program Length 1 Bit:** `1` program
-- **Program Length 2 Bits:** `1` program
-- **Program Length 3 Bits:** `2` programs
-- **Total:** `4` programs
-
-**Reason:** Generated through negation and decrement operations.
-
-### Higher Outputs (`4`, `6`, `9`)
-
-- **Program Length 3 Bits Only:**
-  - `4`: `3` programs
-  - `6`: `1` program
-  - `9`: `1` program
-
-**Reason:** Produced by operations like squaring and doubling operands.
-
-### Summary
-
-- **Total Programs Across All Lengths:**
-  - **1 Bit:** `2` programs
-  - **2 Bits:** `4` programs
-  - **3 Bits:** `8` programs
-  - **Combined Total:** `14` programs
-
-- **Total Unique Outputs Across All Instruction Sets:**
-  - **Negative Outputs:** `-3`, `-2`, `-1`
-  - **Non-Negative Outputs:** `0`, `1`, `2`, `3`, `4`, `6`, `9`
-
-*These outputs are the result of various combinations of opcode operations and operand values across different program lengths.*
+| **Bit Length** | **Programs**                  | **Instruction Sets**                                                               | **Unique Outputs**              |
+|----------------|-------------------------------|------------------------------------------------------------------------------------|---------------------------------|
+| **1 Bit**      | `0`, `1`                      | Direct Output, Inverted Output, Unary Operations                                    | `-1`, `0`, `1`                  |
+| **2 Bits**     | `00`, `01`, `10`, `11`        | Operation A/D, Operation A/E, Operation C/F                                        | `-1`, `0`, `1`, `2`             |
+| **3 Bits**     | `000`, `001`, `010`, `011`, `100`, `101`, `110`, `111` | Operation A/C, Operation B/G, Operation D/H | `-3`, `-2`, `-1`, `0`, `1`, `2`, `3`, `4`, `6`, `9` |
 
 ---
+
+## 3. Diversity/Overlap of Outputs
+
+| **Output** | **1-Bit Programs**   | **2-Bit Programs**                             | **3-Bit Programs**                              |
+|------------|----------------------|-----------------------------------------------|------------------------------------------------|
+| `-3`       | -                    | -                                             | 1 time (`011`)                                  |
+| `-2`       | -                    | -                                             | 1 time (`010`)                                  |
+| `-1`       | 1 time (`1`)         | 1 time (`11`)                                 | 2 times (`001`, `100`)                         |
+| `0`        | 1 time (`0`)         | 4 times (`00`, `10`)                          | 4 times (`000`, `101`, etc.)                   |
+| `1`        | 1 time (`1`)         | 4 times (`01`, `11`)                          | 5 times (`001`, `100`, etc.)                   |
+| `2`        | -                    | 1 time (`01`)                                 | 4 times (`010`, `101`, `111`)                  |
+| `3`        | -                    | -                                             | 2 times (`011`, `110`)                         |
+| `4`        | -                    | -                                             | 3 times (`010`, `110`, `111`)                  |
+| `6`        | -                    | -                                             | 1 time (`111`)                                 |
+| `9`        | -                    | -                                             | 1 time (`011`)                                 |
+
+---
+
+## 4. Diversity/Overlap Analysis
+
+| **Output**     | **Diversity/Overlap Analysis**                                                                                 |
+|----------------|----------------------------------------------------------------------------------------------------------------|
+| **`0`**        | Common across all bit lengths; produced by multiple programs and instruction sets via direct output, negation, etc. |
+| **`1` to `3`** | Produced by direct output, increment, or decrement operations; more diversity in 3-bit programs with squaring/doubling. |
+| **`-1` to `-3`** | Produced through negation and decrement; these are rarer outputs.                                               |
+| **`4`, `6`, `9`** | Produced only in 3-bit programs by squaring and doubling operations.                                            |
 

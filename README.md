@@ -5,7 +5,6 @@
 
 ...Don't think I've seen this in the literature; if it exists, please send it my way!
 
-<img width="703" alt="image" src="https://github.com/user-attachments/assets/26a988f7-1350-42b6-8d10-11247c093661">
 
 
 ---
@@ -75,6 +74,7 @@ In a strict sense, all those variants—whether they involve adding no-operation
 
 Then I thought, even though the vast majority of random Turing programs are, effectively, "jibberish"—nonsensical sequences that either don't halt or don't yield anything meaningful—within that immense sea of randomness, there exist programs that compute something of significance, such as Buffon's needle for π, or perhaps a sequence that perfectly replicates some famous series like Gregory-Leibniz. Perhaps random paths, through sheer chance, would include programs that not only compute **x** but do so in fundamentally different ways (e.g., probabilistically, iteratively, geometrically).
 
+3. Further things to explore; By designing instruction sets that use operations within operations, or by applying different rules to different subsets of bits, we can potentially increase the number of unique outputs for programs of a given bit length. This approach involves creating a hierarchical or nested structure where certain bits determine specific operations or modifiers that are then applied to the operands or results of other operations... so there are more ways to define this I havent considered 
 ---
 
 ### Thermodynamic Analogy

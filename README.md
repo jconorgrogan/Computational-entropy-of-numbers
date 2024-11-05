@@ -5,6 +5,9 @@
 
 ...Don't think I've seen this in the literature; if it exists, please send it my way!
 
+<img width="703" alt="image" src="https://github.com/user-attachments/assets/26a988f7-1350-42b6-8d10-11247c093661">
+
+
 ---
 
 1. Formal Definition
